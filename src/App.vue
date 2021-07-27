@@ -1,6 +1,8 @@
 <template>
  
   <HelloWorld msg="Inscripción a mesas"/>
+  <button class = "btn btn-danger">Cancelar</button>
+  
 </template>
 
 <script>
