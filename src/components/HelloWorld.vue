@@ -1,5 +1,6 @@
 <template>
  <button class="btn btn-primary"> Aceptar </button>
+ <button class="btn btn-info"> Aceptar </button>
 </template>
 
 <script>
