@@ -22,17 +22,17 @@
           <a class="nav-link active" aria-current="page" href="#">Mesas de examen</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Talleres</a>
+          <router-link class="nav-link" to="/docente">Docente</router-link> |
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Mas
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Programas de estudio</a></li>
+            <li><a class="dropdown-item" href="#">Registro Docente</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Consultas Frecuentes</a></li>
           </ul>
         </li>
         <li class="nav-item">

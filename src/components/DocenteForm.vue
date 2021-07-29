@@ -1,7 +1,7 @@
 <template>
 
 
-<div class="container-fluid">
+<div class="container">
 
 <form class="row g-3">
   <div class="col-md-6">
@@ -14,37 +14,39 @@
   </div>
   <div class="col-12">
     <label for="inputAddress" class="form-label">DNI</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    <input type="text" class="form-control" id="inputAddress" placeholder="22000000">
   </div>
   <div class="col-12">
     <label for="inputAddress2" class="form-label">Gmail</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+    <input type="text" class="form-control" id="inputAddress2" placeholder="name@example.com">
   </div>
   <div class="col-md-6">
     <label for="inputCity" class="form-label">Numero Celular</label>
     <input type="text" class="form-control" id="inputCity">
   </div>
   <div class="col-md-4">
-    <label for="inputState" class="form-label">State</label>
-    <select id="inputState" class="form-select">
-      <option selected>Choose...</option>
-      <option>...</option>
-    </select>
+
+
+
+
+
+
+ 
+
+
+
   </div>
-  <div class="col-md-2">
-    <label for="inputZip" class="form-label">Zip</label>
-    <input type="text" class="form-control" id="inputZip">
-  </div>
+
   <div class="col-12">
     <div class="form-check">
       <input class="form-check-input" type="checkbox" id="gridCheck">
       <label class="form-check-label" for="gridCheck">
-        Check me out
+        Guardar mi Informacion
       </label>
     </div>
   </div>
   <div class="col-12">
-    <button type="submit" class="btn btn-primary">Sign in</button>
+    <button type="submit" class="btn btn-primary">Registarse</button>
   </div>
 </form>
 
@@ -54,7 +56,7 @@
 
 <script>
 export default {
-  name: 'Docente',
+  name: 'DocenteForm',
   props: {
     msg: String
   }
