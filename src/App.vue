@@ -1,12 +1,18 @@
 <template>
-<<<<<<< HEAD
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
+  <Menu/>
   <router-view/>
 </template>
+<script>
+// @ is an alias to /src
+import Menu from '@/components/Menu.vue'
 
+export default {
+
+  components: {
+    Menu
+  }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -14,24 +20,6 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-=======
-  <Menu/>
-  <HelloWorld msg="Inscripción a mesas"/>
-  <Mesa/>
-</template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-import Menu from './components/Menu.vue'
-import Mesa from './components/Mesa.vue'
-export default {
-  name: 'App',
-  components: {
-    HelloWorld,
-    Menu,
-    Mesa
-  }
->>>>>>> 3ddc510008d711b04f15a99dbe3348c954c68ecb
 }
 
 #nav {

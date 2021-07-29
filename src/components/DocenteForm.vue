@@ -56,7 +56,7 @@
 
 <script>
 export default {
-  name: 'Docente',
+  name: 'DocenteForm',
   props: {
     msg: String
   }
