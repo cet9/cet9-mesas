@@ -1,15 +1,17 @@
 <template>
  <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Nombre y Apellido</label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nombre del alumno">
+  <label for="exampleFormControlInput1" class="form-label">Nombre del alumno</label>
+  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre y Apellido">
 </div>
+
 <div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">DNI</label>
-  <textarea class="form-control" id="Num." rows="3"></textarea>
+  <label for="exampleFormControlInput1" class="form-label">DNI</label>
+  <input type="text" class="form-control" id="" placeholder="Num.">
 </div>
+
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Curso y Division</label>
-  <input type="email" class="form-control" id="" placeholder="Ingresar">
+  <input type="text" class="form-control" id="" placeholder="Ingresar">
 </div>
 
 
