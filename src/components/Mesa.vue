@@ -5,15 +5,11 @@
   <input type="email" class="form-control" id="exampleFormControlInput1" placeholder=" Ej lengua y Literatura">
 </div>
 
-<input class="form-control" type="text" placeholder="cURSO" aria-label="default input example">
+  <input class="form-control" type="text" placeholder="Curso" aria-label="default input example">
 
-<input class="form-control" type="text" placeholder="Division" aria-label="default input example">
+  <input class="form-control" type="text" placeholder="Division" aria-label="default input example">
 
-
-
-
-
-
+  <input class="form-control" type="text" placeholder="Ciclo" aria-label="default input example">
 
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Fecha</label>
