@@ -1,5 +1,6 @@
 <template>
- 
+ <button >aceptar</button>
+
  
 </template>
 

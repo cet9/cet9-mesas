@@ -29,10 +29,10 @@
             Mas
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Programas de estudio</a></li>
+            <li><a class="dropdown-item" href="#">Registro Docente</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Consultas Frecuentes</a></li>
           </ul>
         </li>
         <li class="nav-item">
