@@ -22,7 +22,13 @@
           <a class="nav-link active" aria-current="page" href="#">Mesas de examen</a>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/docente">Docente</router-link> |
+          <router-link class="nav-link" to="/docente">Docente</router-link> 
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/mesas">Mesas</router-link> 
+        </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/inscripciones">Inscripciones</router-link> 
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

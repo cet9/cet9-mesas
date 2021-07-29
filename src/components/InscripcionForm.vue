@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  name: 'Inscripcion',
+  name: 'InscripcionForm',
   props: {
     msg: String
   }
