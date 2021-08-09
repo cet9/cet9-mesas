@@ -18,6 +18,10 @@
     <label for="exampleFormControlInput1" class="form-label">Curso y División</label>
     <input type="text" class="form-control" id="" placeholder="Ingresar">
   </div>
+
+  <div class= "mb-3">
+  <button type="button" class="btn btn-outline-primary">Guardar</button>
+  </div>
     </div>
   </div>
 
