@@ -1,5 +1,5 @@
 <template>
- <div class="container">
+ <div class="container mt-3">
   <div class="card border-primary mb-3" style="max-width: 20rem;">
   <div class="card-header">Fecha:10/05/23 Horario:9:20</div>
   <div class="card-body">
@@ -9,7 +9,7 @@
       Aula:P.A. 3
     </p>
     <div class="d-grid gap-2">
-    <button type="button" class="btn btn-primary btn-sm">Inscribirse</button>
+    <router-link class="btn btn-info" to="/inscripcion">inscribirse</router-link>
     </div>
    </div>
 </div>
