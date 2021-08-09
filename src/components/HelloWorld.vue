@@ -24,7 +24,7 @@
       Aula:P.A. 3
     </p>
     <div class="d-grid gap-2">
-    <router-link class="btn btn-primary" style="color:white" to="/inscripcion">inscribirse</router-link>
+    <router-link class="btn btn-primary" style="color:white" to="/inscripciones">inscribirse</router-link>
     </div>
    </div>
 </div>
