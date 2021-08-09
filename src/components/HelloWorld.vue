@@ -1,5 +1,20 @@
 <template>
- <button >aceptar</button>
+ <div class="container">
+  <div class="card border-primary mb-3" style="max-width: 20rem;">
+  <div class="card-header">Fecha:10/05/23 Horario:9:20</div>
+  <div class="card-body">
+    <h4 class="card-title">Electrotecnia II</h4>
+    <p class="card-text text-start text-primary">
+      Docente:Pablo Sanchez <br>
+      Aula:P.A. 3
+    </p>
+    <div class="d-grid gap-2">
+    <button type="button" class="btn btn-primary btn-sm">Inscribirse</button>
+    </div>
+   </div>
+</div>
+  
+</div>
 
  
 </template>
