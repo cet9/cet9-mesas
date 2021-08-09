@@ -1,8 +1,13 @@
 <template>
 <div class="container mt-3">
+ <div class="card border-primary mb-3">
+   <div class="card-header"> Mesas </div>
+   <div class="card-body">
+
+   
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Materia a rendir:</label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder=" Ej lengua y Literatura">
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder=" Ej: Lengua y Literatura">
 </div>
 
  <div class="mb-3">
@@ -11,7 +16,7 @@
 </div>
 
  <div class="mb-3">
- <label for="exampleFormControlInput1" class="form-label">Division:</label>
+ <label for="exampleFormControlInput1" class="form-label">División:</label>
   <input class="form-control" type="text" placeholder="3°" aria-label="default input example">
  </div>
 
@@ -37,13 +42,14 @@
 
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Aula:</label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder=" Ej Aula B-1">
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ej: Aula B-1">
 </div>
 
 <div class= "mb-3">
-<button type="button" class="btn btn-success">Guardar</button>
+<button type="button" class="btn btn-outline-primary">Guardar</button>
 </div>
-
+</div>
+</div>
 </div>
 
 
