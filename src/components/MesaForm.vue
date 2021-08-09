@@ -1,5 +1,5 @@
 <template>
-
+<div class="container mt-3">
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Materia a rendir:</label>
   <input type="email" class="form-control" id="exampleFormControlInput1" placeholder=" Ej lengua y Literatura">
@@ -32,7 +32,7 @@
 
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Docente:</label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nonbre del docente">
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Nombre del docente">
 </div>
 
 <div class="mb-3">
@@ -40,6 +40,11 @@
   <input type="email" class="form-control" id="exampleFormControlInput1" placeholder=" Ej Aula B-1">
 </div>
 
+<div class= "mb-3">
+<button type="button" class="btn btn-success">Guardar</button>
+</div>
+
+</div>
 
 
 </template>
