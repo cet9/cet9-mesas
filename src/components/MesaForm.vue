@@ -22,7 +22,7 @@
 
  <div class="mb-3">
  <label for="exampleFormControlInput1" class="form-label">Ciclo:</label>
-  <input class="form-control" type="text" placeholder="Ciclo superior o primario" aria-label="default input example">
+  <input class="form-control" type="text" placeholder="Ciclo superior o básico" aria-label="default input example">
  </div>
 
  <div class="mb-3">
@@ -42,7 +42,7 @@
 
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Aula:</label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ej: Aula B-1">
+  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ej: Aula PB-1">
 </div>
 
 <div class= "mb-3">
