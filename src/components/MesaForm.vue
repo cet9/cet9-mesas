@@ -46,7 +46,7 @@
 </div>
 
 <div class= "mb-3">
-<button type="button" class="btn btn-success">Guardar</button>
+<button type="button" class="btn btn-outline-primary">Guardar</button>
 </div>
 </div>
 </div>
