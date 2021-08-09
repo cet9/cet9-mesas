@@ -37,7 +37,7 @@
     
 
 
-        <button class="btn btn-outline-success" type="submit">Ingresar </button>
+        <button class="btn btn-outline-primary" type="submit">Ingresar</button>
       </form>
     </div>
   </div>
