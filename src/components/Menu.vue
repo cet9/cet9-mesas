@@ -6,7 +6,7 @@
 
 <a class="navbar-brand" href="#">
 
-      <img src="@/assets/1logocet9.png" alt="" width="50" height="60" class="d-inline-block align-text-top">
+      <img src="@/assets/logo3.png" alt="" width="30" height="45" class="d-inline-block align-text-top">
     </a>
 
 
