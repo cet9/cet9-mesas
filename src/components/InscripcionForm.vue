@@ -6,22 +6,22 @@
     <div class="card-body">
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Nombre del alumno</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre y Apellido">
+    <input v-model="nombre" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre y Apellido">
   </div>
 
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">DNI</label>
-    <input type="text" class="form-control" id="" placeholder="N°">
+    <input v-model="dni" type="text" class="form-control" id="" placeholder="N°">
   </div>
 
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Curso y División</label>
-    <input type="text" class="form-control" id="" placeholder="Ingresar">
+    <input v-model="curso" type="text" class="form-control" id="" placeholder="Ej: 1ro 1ra CS TE">
   </div>
 
   <div class= "mb-3">
-  <button type="button" class="btn btn-outline-primary">Guardar</button>
-  </div>
+    <button @click="mostrar" type="button" class="btn btn-outline-primary">Guardar</button>
+    </div>
     </div>
   </div>
 
@@ -33,8 +33,22 @@
 <script>
 export default {
   name: 'InscripcionForm',
-  props: {
-    msg: String
+  data(){
+    return {
+      nombre:``,
+      dni:null,
+      curso:``,
+    }
+  },
+methods: {
+  mostrar(){
+    console.log(`
+      ${this.nombre}
+      ${this.dni}
+      ${this.curso}   
+    `)
+
   }
+}
 }
 </script>
