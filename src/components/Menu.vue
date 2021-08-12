@@ -6,7 +6,7 @@
 
 <a class="navbar-brand" href="#">
 
-      <img src="@/assets/1logocet9.png" alt="" width="50" height="60" class="d-inline-block align-text-top">
+      <img src="@/assets/logo3.png" alt="" width="35" height="53" class="d-inline-block align-text-top">
     </a>
 
 
@@ -37,7 +37,7 @@
     
 
 
-        <button class="btn btn-outline-success" type="submit">Ingresar </button>
+        <button class="btn btn-outline-primary" type="submit">Ingresar</button>
       </form>
     </div>
   </div>
