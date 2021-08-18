@@ -35,7 +35,7 @@
         </div>
       </div>
       <div class="mb-3">
-        <button @click="mostrar()" type="button" class="btn btn-outline-primary">Registrarse</button>
+        <button @click="guardar()" type="button" class="btn btn-outline-primary">Registrarse</button>
       </div>
       </div>
     </div>
@@ -44,6 +44,8 @@
 </template>
 
 <script>
+
+import{ db } from "@/utils/firebase"
 
 export default {
   name: 'DocenteForm',
@@ -57,15 +59,17 @@ export default {
     }
   },
   methods: {
-     mostrar(){
-       console.log(`
-         ${this.nombre}
-         ${this.apellido}
-         ${this.dni}
-         ${this.email}
-         ${this.celular}
-       `)
+
+     guardar(){
+      db.collection("docentes").doc().set({
+        nombre:this.nombre,
+        apellido:this.apellido ,
+        dni:this.dni,
+        email:this.email,
+        celular:this.celular
+      })
      },
+
    },
 }
 </script>
