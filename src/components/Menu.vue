@@ -30,6 +30,9 @@
         <li class="nav-item">
           <router-link class="nav-link" to="/inscripciones">Inscripciones</router-link> 
         </li>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/ingresantes">Ingresantes</router-link> 
+        </li>
 
       </ul>
 
