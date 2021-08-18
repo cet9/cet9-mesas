@@ -1,7 +1,9 @@
 <template>
   <div class="container mt-3">
 
-    <div class="card border-primary mb-3">
+    <div class="row">
+        <div class="col-4">
+          <div class="card border-primary mb-3">
       <div class="card-header">Alta docente</div>
       <div class="card-body">
           <div class="mb-3">
@@ -38,6 +40,13 @@
         <button @click="mostrar()" type="button" class="btn btn-outline-primary">Registrarse</button>
       </div>
       </div>
+          </div>
+        </div>
+        <div class="col-8">
+
+
+
+        </div>
     </div>
     
   </div>
