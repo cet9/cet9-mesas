@@ -44,7 +44,10 @@
 
                       <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Docente:</label>
-                        <input type="email" v-model="docente" class="form-control" id="exampleFormControlInput1" placeholder="Nombre del docente">
+                        <select v-model="docente" class="form-select" aria-label="Default select example">
+                          <option selected value="-1" disabled>seleccione Docente</option>
+                          <option v-for="(d,index) of datos_docentes" :value="index" v-bind:key="d.dni"> {{d.nombre}}, {{d.apellido}} </option>
+                        </select>
                       </div>
 
                       <div class="mb-3">
@@ -78,15 +81,14 @@
             </thead>
             <tbody>
               <tr v-for="m of datos" v-bind:key="m.materia">
-                <td>{{m.aula}}</td>
-                <td>{{m.ciclo}}</td>
+                <td>{{m.materia}}</td>
                 <td>{{m.curso}}</td>
                 <td>{{m.division}}</td>
-                <td>{{m.docente}}</td>
+                <td>{{m.ciclo}}</td>
                 <td>{{m.fecha}}</td>
                 <td>{{m.hora}}</td>
-                <td>{{m.materia}}</td>
-
+                <td>{{m.docente}}</td>
+                <td>{{m.aula}}</td> 
               </tr>
             </tbody>
 
@@ -118,9 +120,10 @@ export default {
       ciclo:'',
       fecha:'',
       hora:'',
-      docente:'',
+      docente:-1,
       aula:'',
-      datos: []
+      datos: [],
+      datos_docentes:[]
     } 
   },
   methods: { 
@@ -138,20 +141,31 @@ export default {
 
          this.listar()
     },
-   async listar(){
+    async listar(){
 
-    let mesas  = await db.collection("Mesas").get();
+      let mesas  = await db.collection("Mesas").get();
        this.datos = mesas.docs.map( doc => {
               return doc.data();
           });
 
           
-      }
+    },
+    async listar_docentes(){
+
+      let docentes  = await db.collection("docentes").get();
+       this.datos_docentes = docentes.docs.map( doc => {
+              return doc.data();
+          });
+
+          
+    }
+
 
     },
 
     mounted() {
       this.listar()
+      this.listar_docentes()
     }
   }
 
