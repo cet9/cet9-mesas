@@ -91,22 +91,22 @@
         </div>
     </div>
     <div class="mb-3">
-                <select v-model="nacionalidad" class="form-select" aria-label="Default select example">
-        <option selected>Nacionalidad</option>
-        <option value="1">Argentina</option>
-        <option value="2">Boliviana</option>
-        <option value="3">Brasilera</option>
-        <option value="4">Chilena</option>
-        <option value="5">Paraguaya</option>
-        <option value="6">Peruana</option>
-        <option value="7">Uruguaya</option>
-        <option value="8">Otra</option>
+        <select v-model="nacionalidad" class="form-select" aria-label="Default select example">
+            <option selected disabled value="-1">Ingrese Nacionalidad</option>
+            <option value="1">Argentina</option>
+            <option value="2">Boliviana</option>
+            <option value="3">Brasilera</option>
+            <option value="4">Chilena</option>
+            <option value="5">Paraguaya</option>
+            <option value="6">Peruana</option>
+            <option value="7">Uruguaya</option>
+            <option value="8">Otra</option>
         
         </select>
     </div>
     <div class="mb-3">
                 <select v-model="escuela_primaria" class="form-select" aria-label="Default select example">
-        <option selected>Escuela Primaria donde el alumno concluyo 7mo Grado</option>
+        <option selected disabled value="-1">Seleccióne Escuela Primaria donde el alumno concluyo 7mo Grado</option>
         <option value="1">N° 19</option>
         <option value="2">N° 33 Juan XXIII</option>
         <option value="3">N° 36</option>
@@ -171,8 +171,8 @@ export default {
             serviciosdeinternet:'',
             acompañamiento_pedagogico:'',
             genero:'',
-            nacionalidad:'',
-            escuela_primaria:'',
+            nacionalidad:-1,
+            escuela_primaria:-1,
 
 
 
