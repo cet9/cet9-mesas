@@ -34,6 +34,11 @@
           <router-link class="nav-link" to="/ingresantes">Ingresantes</router-link> 
         </li>
 
+        <li class="nav-item">
+          <router-link class="nav-link" to="/ingresantes-admin">Ingresantes Admin</router-link> 
+        </li>
+
+
       </ul>
 
       <form class="d-flex">
