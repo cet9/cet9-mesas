@@ -35,7 +35,7 @@
         </div>
       </div>
       <div class="mb-3">
-        <button @click="mostrar()" type="button" class="btn btn-outline-primary">Registrarse</button>
+        <button @click="Guardar()" type="button" class="btn btn-outline-primary">Registrarse</button>
       </div>
       </div>
     </div>
@@ -57,7 +57,7 @@ export default {
     }
   },
   methods: {
-     mostrar(){
+     Guardar(){
        console.log(`
          ${this.nombre}
          ${this.apellido}
