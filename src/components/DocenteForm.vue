@@ -44,7 +44,26 @@
         </div>
         <div class="col-8">
 
-
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>DNI</th>
+              <th>Email</th>
+              <th>Celular</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="docentes of datos" v-bind:key="docentes.dni">
+              <td>{{docentes.nombre}}</td>
+              <td>{{docentes.apellido}}</td>
+              <td>{{docentes.dni}}</td>
+              <td>{{docentes.email}}</td>
+              <td>{{docentes.celular}}</td>
+            </tr>
+          </tbody>
+        </table>
 
         </div>
     </div>
@@ -64,7 +83,8 @@ export default {
       apellido: '',
       dni: null,
       email: '',
-      celular: null
+      celular: null,
+      datos:[]
     }
   },
   methods: {
@@ -77,8 +97,19 @@ export default {
         email:this.email,
         celular:this.celular
       })
+      this.Listar()
      },
+    async Listar(){
+      let docentes = await db.collection("docentes").get();
 
+       this.datos = docentes.docs.map( doc => {return doc.data();
+          });
+    }
    },
+
+    mounted(){
+      this.Listar()
+    }
+
 }
 </script>
