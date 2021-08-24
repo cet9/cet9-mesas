@@ -47,14 +47,14 @@
                 En la etapa en la escuela primaria ¿El alumno dispuso de acompañamiento pedagógico del E.T.A.P?
             </label>
             <div class="form-check">
-            <input v-model="acompañamiento_pedagogico" class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
+            <input v-model="acompañamiento_pedagogico" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+            <label class="form-check-label" for="flexRadioDefault2">
                 SI
             </label>
             </div>
             <div class="form-check">
-            <input v-model="acompañamiento_pedagogico" class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
+            <input v-model="acompañamiento_pedagogico" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
+            <label class="form-check-label" for="flexRadioDefault3">
                 NO
             </label>
             </div>
@@ -71,23 +71,23 @@
                             Género
                     </label>
                 <div class="form-check">
-        <input v-model="genero" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <input v-model="genero" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
         <label class="form-check-label" for="flexRadioDefault1">
             Femenino
         </label>
         </div>
         <div class="form-check">
-        <input v-model=" genero" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+        <input v-model="genero" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
         <label class="form-check-label" for="flexRadioDefault2">
             Masculino
         </label>
         </div>
         <div class="form-check">
-        <input v-model="genero" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-        <label class="form-check-label" for="flexRadioDefault2">
+        <input v-model="genero" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
+        <label class="form-check-label" for="flexRadioDefault3">
             Otros
         </label>
-        <input v-model="genero" class="form-control" placeholder="Ingrese Género" type="text" name="" id="">
+        <input v-model="genero2" class="form-control" placeholder="Ingrese Género" type="text" name="" id="">
         </div>
     </div>
     <div class="mb-3">
