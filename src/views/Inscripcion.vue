@@ -1,8 +1,5 @@
 <template>
     <InscripcionForm/>
-    <ul class="list-group">
-      <li v-for="u in data" class="list-group-item" :key="u.id">{{ u.username}}</li>
-    </ul>
 </template>
 
 <script>
