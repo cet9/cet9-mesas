@@ -3,7 +3,7 @@
 
     <div class="row">
 
-       <div class="col-4">
+       <div class="col-12 col-md-3 col-lg-4">
           
 
           <div class="card border-primary mb-3">
@@ -25,8 +25,8 @@
             <input v-model="curso" type="text" class="form-control" id="" placeholder="Ej: 1ro 1ra CS TE">
           </div>
 
-          <div class= "mb-3">
-            <button @click="mostrar" type="button" class="btn btn-outline-primary">Guardar</button>
+          <div class= "mb-3 text-center">
+            <button @click="mostrar" type="button" class="btn btn-outline-primary">Inscribirse</button>
             </div>
             </div>
           </div>

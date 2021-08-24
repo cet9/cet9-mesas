@@ -37,11 +37,7 @@
         </div>
       </div>
       <div class="mb-3">
-<<<<<<< HEAD
-        <button @click="Guardar()" type="button" class="btn btn-outline-primary">Registrarse</button>
-=======
         <button @click="guardar()" type="button" class="btn btn-outline-primary">Registrarse</button>
->>>>>>> 6c0e53d531c20f6ffcc845d3f79d69f43957812a
       </div>
       </div>
           </div>
@@ -92,16 +88,6 @@ export default {
     }
   },
   methods: {
-<<<<<<< HEAD
-     Guardar(){
-       console.log(`
-         ${this.nombre}
-         ${this.apellido}
-         ${this.dni}
-         ${this.email}
-         ${this.celular}
-       `)
-=======
 
      guardar(){
       db.collection("docentes").doc().set({
@@ -112,7 +98,6 @@ export default {
         celular:this.celular
       })
       this.Listar()
->>>>>>> 6c0e53d531c20f6ffcc845d3f79d69f43957812a
      },
     async Listar(){
       let docentes = await db.collection("docentes").get();
