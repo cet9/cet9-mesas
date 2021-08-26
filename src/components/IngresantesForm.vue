@@ -1,5 +1,6 @@
 <template>
 <div class="container mt-3">
+    {{ingresanteRecibido}}
     <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Direccion de correo electronico.</label>
         <input v-model="correo_electronico" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese su correo electronico.">
@@ -30,14 +31,14 @@
             ¿Cuenta con servicios de internet en un dispositivo electronico?
         </label>
         <div class="form-check">
-        <input v-model="serviciosdeinternet" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <input v-model="serviciosdeinternet" class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault1">
         <label class="form-check-label" for="flexRadioDefault1">
             SI
         </label>
         </div>
         <div class="form-check">
-        <input v-model="serviciosdeinternet" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-        <label class="form-check-label" for="flexRadioDefault2">
+        <input v-model="serviciosdeinternet" class="form-check-input" type="radio" name="flexRadioDefault1" id="flexRadioDefault2" checked>
+        <label class="form-check-label" for="flexRadioDefault1">
             NO
         </label>    
         </div>
@@ -47,14 +48,14 @@
                 En la etapa en la escuela primaria ¿El alumno dispuso de acompañamiento pedagógico del E.T.A.P?
             </label>
             <div class="form-check">
-            <input v-model="acompañamiento_pedagogico" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+            <input v-model="acompañamiento_pedagogico" class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault2">
             <label class="form-check-label" for="flexRadioDefault2">
                 SI
             </label>
             </div>
             <div class="form-check">
-            <input v-model="acompañamiento_pedagogico" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
-            <label class="form-check-label" for="flexRadioDefault3">
+            <input v-model="acompañamiento_pedagogico" class="form-check-input" type="radio" name="flexRadioDefault2" id="flexRadioDefault3" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
                 NO
             </label>
             </div>
@@ -71,23 +72,23 @@
                             Género
                     </label>
                 <div class="form-check">
-        <input v-model="genero" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-        <label class="form-check-label" for="flexRadioDefault1">
+        <input v-model="genero" class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault1" checked>
+        <label class="form-check-label" for="flexRadioDefault3">
             Femenino
         </label>
         </div>
         <div class="form-check">
-        <input v-model="genero" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-        <label class="form-check-label" for="flexRadioDefault2">
+        <input v-model="genero" class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault2" checked>
+        <label class="form-check-label" for="flexRadioDefault3">
             Masculino
         </label>
         </div>
         <div class="form-check">
-        <input v-model="genero" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
+        <input v-model="genero" class="form-check-input" type="radio" name="flexRadioDefault3" id="flexRadioDefault3" checked>
         <label class="form-check-label" for="flexRadioDefault3">
             Otros
         </label>
-        <input v-model="genero2" class="form-control" placeholder="Ingrese Género" type="text" name="" id="">
+        <input v-model="genero2" class="form-control" placeholder="Ingrese Género" type="text" name="" id="" disabled="true">
         </div>
     </div>
     <div class="mb-3">
@@ -148,9 +149,8 @@
         
         </select>
     </div>
-    <button @click="guardar()" class="btn btn-primary">
-        guardar
-    </button>
+    <button @click="guardar()" class="btn btn-success">guardar</button>
+    <button @click ="actualizarIngresante" class="btn btn-primary">Actualizar</button>
 
 </div>
 
@@ -159,8 +159,14 @@
 
 <script>
 import{ db } from "@/utils/firebase"
+import { inject } from '@vue/runtime-core'
 export default {
     name:'IngresantesForm',
+    setup(){
+        const ingresanteRecibido = inject('unIngresante')
+
+        return {ingresanteRecibido}
+    },
     data(){
         return{
             correo_electronico:'',
@@ -173,9 +179,7 @@ export default {
             genero:'',
             nacionalidad:-1,
             escuela_primaria:-1,
-
-
-
+            id:null
         }
     },
     methods:{
@@ -198,13 +202,28 @@ export default {
                 genero: this.genero,
                 nacionalidad: this.nacionalidad,
                 escuela_primaria: this.escuela_primaria,
-
-                
-
             }
              db.collection("Ingresantes").doc().set(Ingresante)
 
              this.listar()
+             this.correo_electronico="";this.nombreyapellido="";this.dni="";this.dia_mes_año=""; this.correo_electronico_estudiante="";this.serviciowifi="";this.acompañamiento="";this.genero=""; this.nacionalidad="";this.escuela_primaria="";
+        },
+
+        async actualizarIngresante(){
+            const unIngresante = {
+                email: this.correo_electronico,
+                nombreyapellido: this.nombreyapellido,
+                dni: this.dni,
+                dia_mes_año: this.dia_mes_año,
+                email_estudiante: this.correo_electronico_estudiante,
+                serviciowifi: this.serviciosdeinternet,
+                acompañamiento: this.acompañamiento_pedagogico,
+                genero: this.genero,
+                nacionalidad: this.nacionalidad,
+                escuela_primaria: this.escuela_primaria,
+            }
+            await db.collection("ingresantes").doc(this.id).update(unIngresante)
+            this.listar
         }
     }
 }
