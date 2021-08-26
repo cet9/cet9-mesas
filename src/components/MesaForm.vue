@@ -19,18 +19,43 @@
 
                       <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Curso:</label>
-                        <input class="form-control" v-model="curso" type="text" placeholder="1" aria-label="default input example">
+                          <select v-model="curso" class="form-select" aria-label="default input example">
+                                <option value="-1" disabled selected>Seleccione curso</option>
+                                <option value="1">1°</option>
+                                <option value="2">2°</option>
+                                <option value="3">3°</option>
+                                <option value="4">4°</option>
+                                <option value="5">5°</option>
+                                <option value="6">6°</option>
+                          </select>
                       </div>
 
                       <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">División:</label>
-                        <input class="form-control" v-model="division" type="text" placeholder="3°" aria-label="default input example">
-                      </div>
+                          <label for="exampleFormControlInput1" class="form-label">División:</label>
+                          <select v-model="division"  class="form-select" aria-label="default input example">
+
+                                <option value="-1" disabled selected>Seleccione división</option>
+                                <option value="1">1°</option>
+                                <option value="2">2°</option>
+                                <option value="3">3°</option>
+                                <option value="4">4°</option>
+                                <option value="5">5°</option>
+                                <option value="6">6°</option>
+                            </select>    
+                      </div> 
+                            
+                            
 
                       <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Ciclo:</label>
-                        <input class="form-control" v-model="ciclo" type="text" placeholder="Ciclo superior o básico" aria-label="default input example">
+                       
+                        <select v-model="ciclo" type="text" class="form-select" aria-label="default input example">
+                            <option value="-1" disabled selected >Seleccione Ciclo</option>
+                            <option value="1">Ciclo Superior</option>
+                            <option value="2">Ciclo Básico</option>
+                           </select>   
                       </div>
+                          
 
                       <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Fecha:</label>
@@ -52,11 +77,29 @@
 
                       <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Aula:</label>
-                        <input type="email" v-model="aula" class="form-control" id="exampleFormControlInput1" placeholder="Ej: Aula PB-1">
+                        
+
+                        <select v-model="aula" class="form-select" aria-label="default input example">
+                            
+                            <option value="1">PB-1</option>
+                            <option value="2">PB-2</option>
+                            <option value="3">PB-3</option>
+                            <option value="4">PB-4</option>
+                            <option value="5">PB-5</option>
+                            <option value="6">PB-6</option>
+                            <option value="1">PA-1</option>
+                            <option value="2">PA-2</option>
+                            <option value="3">PA-3</option>
+                            <option value="4">PA-4</option>
+                            <option value="5">PA-5</option>
+                            <option value="6">PA-6</option>
+                          </select> 
+                           
                       </div>
 
                       <div class= "mb-3">
-                        <button type="button" @click="guardar()" class="btn btn-outline-primary">Guardar</button>
+                        <button type="button" @click="guardar()" class="btn btn-outline-success">Guardar</button>
+                        <button @click="ActualizarMesas()"  class="btn btn-primary "> Actualizar </button>
                       </div>
               
             </div>
@@ -77,6 +120,8 @@
                 <th>Hora</th>
                 <th>Docente</th>
                 <th>Aula</th>
+                
+
               </tr>
             </thead>
             <tbody>
@@ -88,7 +133,18 @@
                 <td>{{m.fecha}}</td>
                 <td>{{m.hora}}</td>
                 <td>{{m.docente}}</td>
-                <td>{{m.aula}}</td> 
+                <td>{{m.aula}}</td>
+                <td>
+                <button @click="eliminarMesas(m.id)" class="btn btn-danger btn-sm">
+               
+                 <i class="bi bi-trash" style="margin-right-10px"></i>
+                
+                </button>
+                <button @click="EditarMesas(m)" class="btn btn-info btn-sm">
+                  <i class="bi bi-pencil"></i> 
+                  
+                </button>
+                </td>
               </tr>
             </tbody>
 
@@ -115,15 +171,17 @@ export default {
   data(){
     return{
       materia:'',
-      curso:'' ,
-      división:'',
-      ciclo:'',
+      curso:-1 ,
+      division:-1,
+      ciclo:-1,
       fecha:'',
       hora:'',
       docente:-1,
       aula:'',
       datos: [],
-      datos_docentes:[]
+      datos_docentes:[],
+      lista_mesas:[],
+      id: null
     } 
   },
   methods: { 
@@ -140,32 +198,63 @@ export default {
         });
 
          this.listar()
+          this.materia=''; this.curso=''; this.division=''; this.ciclo=''; this.fecha=''; this.hora='';
+          this.docente=''; this.aula='';
     },
     async listar(){
 
-      let mesas  = await db.collection("Mesas").get();
-       this.datos = mesas.docs.map( doc => {
-              return doc.data();
+      let Mesas  = await db.collection("Mesas").get();
+       this.datos = Mesas.docs.map( doc => {
+              this.lista_Mesas = doc.data()
+              this.lista_Mesas.id = doc.id;
+
+              return this.lista_Mesas;
           });
 
           
     },
-    async listar_docentes(){
 
-      let docentes  = await db.collection("docentes").get();
-       this.datos_docentes = docentes.docs.map( doc => {
-              return doc.data();
-          });
+    EditarMesas(Mesas){
+      this.materia = Mesas.materia;
+      this.curso = Mesas.curso;
+      this.division = Mesas.division;
+      this.ciclo = Mesas.ciclo;
+      this.fecha = Mesas.fecha;
+      this.hora = Mesas.hora;
+      this.docente = Mesas.docente;
+      this.aula = Mesas.aula;
+      this.id = Mesas.id;
+    },
 
-          
-    }
-
+   async ActualizarMesas(){
+         const UnaMesa = {
+          materia: this.materia,
+          curso: this.curso,
+          division: this.division,
+          ciclo: this.ciclo,
+          fecha: this.fecha,
+          hora: this.hora,
+          docente: this.docente,
+          aula: this.aula,
+        }
+         await db.collection("Mesas").doc(this.id).update(UnaMesa)
+         this.listar()
 
     },
+
+    async eliminarMesas(id){
+      await db.collection("Mesas").doc(id).delete();
+      this.listar()
+
+    },
+
+    },
+
+    
 
     mounted() {
       this.listar()
-      this.listar_docentes()
+
     }
   }
 
